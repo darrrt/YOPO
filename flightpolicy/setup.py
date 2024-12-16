@@ -15,5 +15,5 @@ setup(
     author_email='lqzx1998@tju.edu.cn',
     description='A Learning-based Planner for Autonomous Navigation',
     long_description='',
-    packages=['flightpolicy'],
+    packages=find_packages("."),
 )

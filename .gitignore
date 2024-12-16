@@ -29,6 +29,7 @@ externals/
 run/utils/*.csv
 
 # dataset
-/run/yopo_sim/*
-/run/rknn_quantization/*
+run/yopo_sim/*
+run/rknn_quantization/*
 
+build
