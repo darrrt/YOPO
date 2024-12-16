@@ -83,13 +83,13 @@ flightrender/
 Below are the versions of my python libraries. (You can remove the version numbers if compatibility issues occur in the future.)
 
 ```
-conda create --name yopo python=3.8
+conda create --name yopo31 python=3.10
 conda activate yopo
 
-conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1  pytorch-cuda=11.8 -c pytorch -c nvidia
+pip3 install torch torchvision torchaudio
 pip install opencv-python
-pip install gym==0.21.0 stable-baselines3==1.5.0 
-pip install scipy==1.10.1 scikit-build==0.18.1 ruamel-yaml==0.17.21 numpy==1.22.3 tensorboard==2.8.0 empy catkin_pkg
+pip install gym stable-baselines3
+pip install scipy1 scikit-build ruamel-yaml numpy tensorboard empy==3.3.4 catkin_pkg
 ```
 **5. Build the flightlib** 
 ```
@@ -97,7 +97,7 @@ conda activate yopo
 cd YOPO/flightlib/build
 cmake ..
 make -j8
-pip install .
+pip install -e . 
 ```
 **6. Some issues may arise when we test on different devices**
 
