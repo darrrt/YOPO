@@ -51,7 +51,7 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
 # Including dependencies
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4.10 REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 # Including dependencies
@@ -164,9 +164,10 @@ message(STATUS "The activated CXX DEBUG configuration is:\n ${CMAKE_CXX_FLAGS_DE
 # Specify Build Resources
 # ###############################################################################
 message(STATUS "======>  Setup Build  ")
-
+add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/my_cv_bridge)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/arc_utilities)
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/sdf_tools)
+
 
 # Create file lists for flightlib source
 file(GLOB_RECURSE FLIGHTLIB_SOURCES
@@ -207,6 +208,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 # Library and Executables
 include_directories(include)
+include_directories(${PROJECT_SOURCE_DIR}/third_party/my_cv_bridge/include)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/sdf_tools/include)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/arc_utilities/include)
 
@@ -268,7 +270,7 @@ endif()
 find_package(catkin REQUIRED COMPONENTS
 	tf
 	nav_msgs
-	cv_bridge
+	# my_cv_bridge
 )
 
 include_directories(
