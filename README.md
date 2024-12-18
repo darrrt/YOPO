@@ -84,20 +84,26 @@ Below are the versions of my python libraries. (You can remove the version numbe
 
 ```
 conda create --name yopo31 python=3.10
-conda activate yopo
+conda activate yopo31
 
 pip3 install torch torchvision torchaudio
 pip install opencv-python
 pip install gym stable-baselines3
-pip install scipy1 scikit-build ruamel-yaml numpy tensorboard empy==3.3.4 catkin_pkg
+pip install scipy scikit-build ruamel-yaml pyyaml numpy tensorboard empy==3.3.4 catkin_pkg
+
+cd ~/YOPO/flightpolicy
+pip install -e . --use-pep517
+
+
 ```
 **5. Build the flightlib** 
 ```
 conda activate yopo
-cd YOPO/flightlib/build
+mkdir -p ~/YOPO/flightlib/build
+cd ~/YOPO/flightlib/build
 cmake ..
 make -j8
-pip install -e . 
+pip install -e . --use-pep517
 ```
 **6. Some issues may arise when we test on different devices**
 

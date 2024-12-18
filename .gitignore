@@ -33,3 +33,6 @@ run/yopo_sim/*
 run/rknn_quantization/*
 
 build
+devel
+logs
+.catkin_tools
